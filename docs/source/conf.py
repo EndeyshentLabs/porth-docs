@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'Porth'
+copyright = '2022, EndeyshentLabs. Porth: Alexey "rexim, tsoding" Kutepov'
+author = 'EndeyshentLabs'
 
 release = '0.1'
 version = '0.1.0'
