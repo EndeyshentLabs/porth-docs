@@ -115,4 +115,43 @@ Increment 64-bit int by value. Accepts int64 as 'ptr' incby as 'int' respectivel
 inc64
 -----
 Increment 64-bit int by 1. Accepts int64 as 'ptr'.
+
+dec32
+-----
+Decrement 32-bit int by 1. Accepts int32 as 'ptr'.
+    signature: ptr
+
+inc32
+-----
+Increment 32-bit int by 1. Accepts int32 as 'ptr'.
+
+dec32
+-----
+Decrement 32-bit int by 1. Accepts int32 as 'ptr'.
+    signature: ptr
+
+inc8
+-----
+Increment 8-bit int by 1. Accepts int8 as 'ptr'.
+
+dec8
+-----
+Decrement 8-bit int by 1. Accepts int8 as 'ptr'.
+    signature: ptr
+
+neg
+---
+Negate number. Accepts number as 'int'. Returns 'int'.
+    signature: int -- int
+
+?null
+-----
+Checks 'is null?'. Accepts TBD. Returns 'bool'
+    signature: ptr -- bool
+.. note::
+    what is 'ptr' in this
+
+toggle
+------
+Toggles logical. Accepts TBD.
     signature: ptr
