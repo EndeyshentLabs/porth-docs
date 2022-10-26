@@ -5,153 +5,213 @@ Core fundamental definitions of Porth that are used by all layers of abstraction
 
 @ptr
 ----
-TBD
+Load a ptr.
+    signature: [place: ptr] -- [byte: ptr]
+
 
 @@ptr
 -----
-TBD
+Load a ptr to a ptr.
+    signature: [place: ptr] -- [byte: ptr]
+
+..  +----------------------------------------------------------+
+..  |                        warning::                         |
+..  |           idk what f***ing magic this thing do           |
+..  +----------------------------------------------------------+
 
 @bool
 -----
-TBD
+Load a bool.
+    signature: [place: ptr] -- [byte: bool]
+
 
 @int
 ----
-TBD
+Load an int.
+    signature: [place: ptr] -- [byte: int]
+
 
 @addr
 -----
-TBD
+Load an addr.
+    signature: [place: ptr] -- [byte: addr]
+
+.. note::
+ addr - address of the procedure.
+
 
 !ptr
 ----
-TBD
+Store a ptr.
+    signature: [byte: ptr] [place: ptr]
+
 
 !bool
 -----
-TBD
+Store a ptr.
+    signature: [byte: bool] [place: ptr]
+
 
 !int
 ----
-TBD
+Store an int.
+    signature: [byte: int] [place: ptr]
+
 
 !addr
 -----
-TBD
+Store an addr. Accepts addr ptr respectively.
+    signature: [byte: addr] [place: ptr]
+
 
 ptr+
 ----
-TBD
+Sums up ptr and int.
+    signature: ptr int -- ptr
+
 
 ptr-
 ----
-TBD
+Subtracts int from ptr.
+    signature: ptr int -- ptr
+
 
 ptr!=
 -----
-TBD
+Not equal comparison.
+    signature: ptr ptr -- bool
+
 
 ptr=
 ----
-TBD
+Equal comparison.
+    signature: ptr ptr -- bool
+
 
 ptr<
 ----
-TBD
+Less than comparison.
+    signature: ptr ptr -- bool
+
 
 +ptr
 ----
-TBD
+Sums up int and ptr.
+    signature: int ptr -- ptr
+
 
 ptr-diff
 --------
-TBD
+Difference between two pointers.
+    signature: ptr ptr -- int
+
 
 / div
 ------
-Division. Accepts number1 as 'int' number2 as 'int' respectively. Returns result as 'int'.
-    signature: int int -- int
+Division.
+    signature: [a: int] [b: int] -- [a / b: int]
+
 
 % mod
 ------
-Modulus. Accepts number1 as 'int' number2 as 'int' respectively. Returns modulus as 'int'.
-    signature: int int -- int
+Modulus.
+    signature: [a: int] [b: int] -- [a % b: int]
+
 
 imod
 ----
-IDIV modulus. Accepts number1 as 'int' number2 as 'int' respectively. Returns modulus as 'int'.
-    signature: int int -- int
+IDIV modulus.
+    signature: [a: int] [b: int] -- [a % b: int]
+
 
 idiv
 ----
-IDIV private. Accepts number1 as 'int' number2 as 'int' respectively. Returns private as 'int'.
-    signature: int int -- int
+IDIV.
+    signature: [a: int] [b: int] -- [a / b: int]
+
 
 emod
 ----
-Sum of moduluses of 2 numbers. Accepts number1 as 'int' number2 as 'int' respectively. Returns sumofmods as 'int'.
-    signature: int int -- int
+Sum of moduluses of 2 numbers.
+    signature: [a: int] [b: int] -- [(a % b) + (b % a): int]
+
 
 lnot
 ----
-Logical 'not'. Accepts logical as 'bool'. Returns 'bool'.
+Logical 'not'.
     signature: bool -- bool
+
 
 land
 ----
-Logical 'and'. Accepts logical1 as 'bool' logical2 as 'bool' respectively. Returns 'bool'.
+Logical 'and'.
     signature: bool bool -- bool
+
 
 lor
 ---
-Logical 'or'. Accepts logical1 as 'bool' logical2 as 'bool' respectively. Returns 'bool'.
+Logical 'or'.
     signature: bool bool -- bool
+
 
 inc64-by
 --------
-Increment 64-bit int by value. Accepts int64 as 'ptr' incby as 'int' respectively.
-    signature: ptr int
+Increment 64-bit int by value.
+    signature: [int64: ptr] [b: int]
+
 
 inc64
 -----
-Increment 64-bit int by 1. Accepts int64 as 'ptr'.
+Increment 64-bit int by 1.
+    signature: [int64: ptr]
 
-dec32
+
+dec64
 -----
-Decrement 32-bit int by 1. Accepts int32 as 'ptr'.
-    signature: ptr
+Decrement 64-bit int by 1.
+    signature: [int64: ptr]
+
 
 inc32
 -----
-Increment 32-bit int by 1. Accepts int32 as 'ptr'.
+Increment 32-bit int by 1.
+    signature: [int32: ptr]
+
 
 dec32
 -----
-Decrement 32-bit int by 1. Accepts int32 as 'ptr'.
-    signature: ptr
+Decrement 32-bit int by 1.
+    signature: [int32: ptr]
+
 
 inc8
 -----
-Increment 8-bit int by 1. Accepts int8 as 'ptr'.
+Increment 8-bit int by 1.
+    signature: [int8: ptr]
+
 
 dec8
 -----
 Decrement 8-bit int by 1. Accepts int8 as 'ptr'.
-    signature: ptr
+    signature: [int8: ptr]
+
 
 neg
 ---
-Negate number. Accepts number as 'int'. Returns 'int'.
-    signature: int -- int
+Negate number.
+    signature: [a: int] -- [-a: int]
+
 
 ?null
 -----
-Checks 'is null?'. Accepts TBD. Returns 'bool'
+Null check.
     signature: ptr -- bool
+
 .. note::
     what is 'ptr' in this
 
+
 toggle
 ------
-Toggles logical. Accepts TBD.
-    signature: ptr
+Toggles logical.
+    signature: [logical: ptr]
