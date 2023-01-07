@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>linux &mdash; Porth 0.1 documentation</title><link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="termios" href="termios.html" />
+    <link rel="prev" title="std" href="std.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Porth
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="core.html">core</a></li>
+<li class="toctree-l1"><a class="reference internal" href="std.html">std</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">linux</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#write">write</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#read">read</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#openat">openat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fstat">fstat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#stat">stat</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#close">close</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#exit">exit</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#mmap">mmap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clock-nanosleep">clock_nanosleep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#clock-gettime">clock_gettime</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fork">fork</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getpid">getpid</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#execve">execve</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wait4">wait4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#rename">rename</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#fcntl">fcntl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#kill">kill</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#dup2">dup2</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#socket">socket</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#bind">bind</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#listen">listen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#accept">accept</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getcwd">getcwd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#chroot">chroot</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#ioctl">ioctl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wifstopped">WIFSTOPPED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wifcontinued">WIFCONTINUED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wtermsig">WTERMSIG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wifexited">WIFEXITED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#wexitstatus">WEXITSTATUS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#isatty">isatty</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="termios.html">termios</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Porth</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>linux</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/linux.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="linux">
+<h1>linux<a class="headerlink" href="#linux" title="Permalink to this headline">¶</a></h1>
+<p>Linux specific definitions.</p>
+<div class="section" id="write">
+<h2>write<a class="headerlink" href="#write" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Write(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [fd: int] [buf: ptr] [count: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="read">
+<h2>read<a class="headerlink" href="#read" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Read(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [fd: int] [buf: ptr] [count: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="openat">
+<h2>openat<a class="headerlink" href="#openat" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Openat(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [dirfd: int] [pathname: int] [flags: ptr] [mode: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="fstat">
+<h2>fstat<a class="headerlink" href="#fstat" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Fstat(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [statbuf: ptr] [fd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="stat">
+<h2>stat<a class="headerlink" href="#stat" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Stat(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [pathname: ptr] [statbuf: ptr] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="close">
+<h2>close<a class="headerlink" href="#close" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Close(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [fd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="exit">
+<h2>exit<a class="headerlink" href="#exit" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Exit(3) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [status: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="mmap">
+<h2>mmap<a class="headerlink" href="#mmap" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Mmap(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [offset: int] [fd: int] [flags: int] [prot: int] [length: int] [addr: ptr] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="clock-nanosleep">
+<h2>clock_nanosleep<a class="headerlink" href="#clock-nanosleep" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Clock_nanosleep(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [remain: ptr] [request: ptr] [flags: int] [clockid: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="clock-gettime">
+<h2>clock_gettime<a class="headerlink" href="#clock-gettime" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Clock_gettime(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [clockid: ptr] [tp: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="fork">
+<h2>fork<a class="headerlink" href="#fork" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Fork(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: – [pid|errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="getpid">
+<h2>getpid<a class="headerlink" href="#getpid" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Getpid(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: – [pid: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="execve">
+<h2>execve<a class="headerlink" href="#execve" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Execve(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [envp: ptr] [argv: ptr] [pathname: ptr] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="wait4">
+<h2>wait4<a class="headerlink" href="#wait4" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Wait4(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [rusage: ptr] [options: int] [wstatus: ptr] [pid: int] – [pid|errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="rename">
+<h2>rename<a class="headerlink" href="#rename" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Rename(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [newpath: ptr] [oldpath: ptr] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="fcntl">
+<h2>fcntl<a class="headerlink" href="#fcntl" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Fcntl(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [arg: int] [cmd: int] [fd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="kill">
+<h2>kill<a class="headerlink" href="#kill" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Kill(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [sig: int] [pid: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="dup2">
+<h2>dup2<a class="headerlink" href="#dup2" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Dup2(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [newfd: int] [oldfd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="socket">
+<h2>socket<a class="headerlink" href="#socket" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Socket(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [protocol: int] [type: int] [domain: int] – [newfd|errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="bind">
+<h2>bind<a class="headerlink" href="#bind" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Bind(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [addrlen: int] [addr: ptr] [sockfd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="listen">
+<h2>listen<a class="headerlink" href="#listen" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Listen(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [backlog: int] [sockfd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="accept">
+<h2>accept<a class="headerlink" href="#accept" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Accept(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [addrlen: ptr] [addr: ptr] [sockfd: int] – [newfd|errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="getcwd">
+<h2>getcwd<a class="headerlink" href="#getcwd" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Getcwd(3) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [size: int] [buf: ptr] – [buf|errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="chroot">
+<h2>chroot<a class="headerlink" href="#chroot" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Chroot(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: [path: ptr] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="ioctl">
+<h2>ioctl<a class="headerlink" href="#ioctl" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Ioctl(2) syscall wrapper.</dt><dd><ul class="simple">
+<li><p>signature: int [request: int] [fd: int] – [errno: int]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<div class="section" id="wifstopped">
+<h2>WIFSTOPPED<a class="headerlink" href="#wifstopped" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="wifcontinued">
+<h2>WIFCONTINUED<a class="headerlink" href="#wifcontinued" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="wtermsig">
+<h2>WTERMSIG<a class="headerlink" href="#wtermsig" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="wifexited">
+<h2>WIFEXITED<a class="headerlink" href="#wifexited" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="wexitstatus">
+<h2>WEXITSTATUS<a class="headerlink" href="#wexitstatus" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="isatty">
+<h2>isatty<a class="headerlink" href="#isatty" title="Permalink to this headline">¶</a></h2>
+<dl class="simple">
+<dt>Checks, is programm ran in terminal or not.</dt><dd><ul class="simple">
+<li><p>signature: [fd: int] – [errno: int] [is a tty?: bool]</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="std.html" class="btn btn-neutral float-left" title="std" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="termios.html" class="btn btn-neutral float-right" title="termios" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, EndeyshentLabs. Porth: Alexey &#34;rexim, tsoding&#34; Kutepov.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
