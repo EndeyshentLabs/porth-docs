@@ -19,5 +19,7 @@ help:
 %: Makefile
 	rm -rf $(BUILDDIR)/*
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	rm -rf ./_sources ./_static ./doctrees
 	mv -f $(BUILDDIR)/html/* $(BUILDDIR)/
 	rm -rf $(BUILDDIR)/html/
+	mv $(BUILDDIR)/* ./
