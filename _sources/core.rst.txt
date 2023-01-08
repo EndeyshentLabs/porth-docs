@@ -192,7 +192,7 @@ Increment 8-bit int by 1.
 
 dec8
 -----
-Decrement 8-bit int by 1. Accepts int8 as 'ptr'.
+Decrement 8-bit int by 1.
     - signature: [int8: ptr]
 
 
@@ -210,5 +210,5 @@ Null check.
 
 toggle
 ------
-Toggles logical.
-    - signature: [logical: ptr]
+Toggles bool.
+    - signature: [bool: ptr]
