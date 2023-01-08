@@ -5,28 +5,28 @@ The main standard library that you probably want to include into your Porth prog
 
 nth_argv
 --------
-Get nth argument. Accepts index as 'int'. Returns string as 'ptr'.
-   signature: int -- ptr
+Get nth argument.
+   - signature: int -- ptr
 
 cstrlen
 -------
-Get length of c-string. Accepts c-string as 'ptr'. Returns length as 'int'.
+Get length of c-string.
     signature: ptr -- int
 
 cstreq
 ------
-Compares two c-strings. Accepts c-string1 as 'ptr' c-string2 as 'ptr' respectively. Returns state as 'bool'.
+Compares two c-strings.
     signature: ptr ptr -- bool
 
 cstr-to-str
 -----------
-Converts c-string to string. Accepts c-string as 'ptr'. Returns string as 'int ptr'.
+Converts c-string to string.
     signature: ptr -- int ptr
 
 fputs
 -----
-Print the element on top of the stack in a free form to **formatter** and remove it from the stack.
-    signature: int ptr int
+Print the element on top of the stack in a free form to **file descriptor* and remove it from the stack.
+    signature: [string: int ptr] [fd: int]
 
 puts
 ----

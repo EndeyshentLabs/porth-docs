@@ -60,7 +60,7 @@ Store an int.
 
 !addr
 -----
-Store an addr. Accepts addr ptr respectively.
+Store an addr.
     - signature: [byte: addr] [place: ptr]
 
 

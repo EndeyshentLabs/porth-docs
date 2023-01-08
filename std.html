@@ -49,10 +49,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#eputs">eputs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#str-count">Str.count</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#str-data">Str.data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">&#64;Str.count</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">&#64;Str.data</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">!Str.count</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">!Str.data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">&#64;Str.count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">&#64;Str.data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">!Str.count</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">!Str.data</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="linux.html">linux</a></li>
@@ -89,35 +89,37 @@
 <div class="section" id="nth-argv">
 <h2>nth_argv<a class="headerlink" href="#nth-argv" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Get nth argument. Accepts index as ‘int’. Returns string as ‘ptr’.</dt><dd><p>signature: int – ptr</p>
+<dt>Get nth argument.</dt><dd><ul class="simple">
+<li><p>signature: int – ptr</p></li>
+</ul>
 </dd>
 </dl>
 </div>
 <div class="section" id="cstrlen">
 <h2>cstrlen<a class="headerlink" href="#cstrlen" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Get length of c-string. Accepts c-string as ‘ptr’. Returns length as ‘int’.</dt><dd><p>signature: ptr – int</p>
+<dt>Get length of c-string.</dt><dd><p>signature: ptr – int</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="cstreq">
 <h2>cstreq<a class="headerlink" href="#cstreq" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Compares two c-strings. Accepts c-string1 as ‘ptr’ c-string2 as ‘ptr’ respectively. Returns state as ‘bool’.</dt><dd><p>signature: ptr ptr – bool</p>
+<dt>Compares two c-strings.</dt><dd><p>signature: ptr ptr – bool</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="cstr-to-str">
 <h2>cstr-to-str<a class="headerlink" href="#cstr-to-str" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Converts c-string to string. Accepts c-string as ‘ptr’. Returns string as ‘int ptr’.</dt><dd><p>signature: ptr – int ptr</p>
+<dt>Converts c-string to string.</dt><dd><p>signature: ptr – int ptr</p>
 </dd>
 </dl>
 </div>
 <div class="section" id="fputs">
 <h2>fputs<a class="headerlink" href="#fputs" title="Permalink to this headline">¶</a></h2>
 <dl class="simple">
-<dt>Print the element on top of the stack in a free form to <strong>formatter</strong> and remove it from the stack.</dt><dd><p>signature: int ptr int</p>
+<dt>Print the element on top of the stack in a free form to <a href="#id1"><span class="problematic" id="id2">**</span></a>file descriptor* and remove it from the stack.</dt><dd><p>signature: [string: int ptr] [fd: int]</p>
 </dd>
 </dl>
 </div>
@@ -143,20 +145,20 @@
 <h2>Str.data<a class="headerlink" href="#str-data" title="Permalink to this headline">¶</a></h2>
 <p>TBD</p>
 </div>
-<div class="section" id="id1">
-<h2>&#64;Str.count<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
-</div>
-<div class="section" id="id2">
-<h2>&#64;Str.data<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p>TBD</p>
-</div>
 <div class="section" id="id3">
-<h2>!Str.count<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<h2>&#64;Str.count<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>TBD</p>
 </div>
 <div class="section" id="id4">
-<h2>!Str.data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2>&#64;Str.data<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="id5">
+<h2>!Str.count<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>TBD</p>
+</div>
+<div class="section" id="id6">
+<h2>!Str.data<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
 <p>TBD</p>
 </div>
 </div>
